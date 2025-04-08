@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "e68e7672-5ec0-4e3e-9398-dd346f78c3dc",
+		"name": "SpringBoot Microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34748567"
+	},
+	"item": [
+		{
+			"name": "clientes",
+			"item": [
+				{
+					"name": "CreateClient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Leonardo Favio\",\n    \"genero\": \"M\",\n    \"edad\": 89,\n    \"identificacion\": \"2147384\",\n    \"direccion\": \"Street 16\",\n    \"telefono\": \"1234573\",\n    \"password\": \"MassytynYZ\",\n    \"estado\": true\n}"
+						},
+						"url": "http://localhost:8081/clientes"
+					},
+					"response": []
+				},
+				{
+					"name": "allClients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/clientes"
+					},
+					"response": []
+				},
+				{
+					"name": "clienteById",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "updateClient",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "http://localhost:8081/clientes/1"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteClient",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8081/clientes/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "movimientos",
+			"item": [
+				{
+					"name": "CreateMovements",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"numeroCuenta\": \"1234567890\", \"tipoMovimiento\": \"Retiro\", \"valor\": 50.0 }"
+						},
+						"url": "http://localhost:8082/movimientos"
+					},
+					"response": []
+				},
+				{
+					"name": "movementById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8084/movimientos/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cuentas",
+			"item": [
+				{
+					"name": "deleteAccount",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8084/cuentas/1"
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateAccount",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"numeroCuenta\": \"00972005428\",\n    \"tipoCuenta\": \"Corriente\",\n    \"saldoInicial\": 12000000,\n    \"estado\": true,\n    \"clienteId\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8084/cuentas/00972005428"
+					},
+					"response": []
+				},
+				{
+					"name": "allAccounts",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "createAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:8084/cuentas"
+					},
+					"response": []
+				},
+				{
+					"name": "AccountById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8084/cuentas/Nino"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reportes",
+			"item": [
+				{
+					"name": "reportByClientAndDate",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8084/reportes/"
+					},
+					"response": []
+				},
+				{
+					"name": "reportByClient",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8084/movimientos/reporte/3"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
